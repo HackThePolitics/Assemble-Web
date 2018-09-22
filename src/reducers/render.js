@@ -1,10 +1,9 @@
-import { LOAD_PROBLEM_CONTENT } from "../constants";
+import { LOAD_PROBLEM_CONTENT } from '../constants';
 
 const initialState = {
   problem: {
-    id: "ID010101",
-    title: "Problem 101",
-    description: "There are a lot of issues..."
+    id: 'WaJE9FppP9x1Wc4EaFk1',
+    type: 'problem'
   }
 };
 

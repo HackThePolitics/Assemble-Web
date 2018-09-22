@@ -1,11 +1,11 @@
-import { LOAD_PROBLEM_CONTENT } from "../constants";
+import { LOAD_PROBLEM_CONTENT } from '../constants';
 
-const loadProblemContent = docDetails => dispatch =>
+const loadIdForRender = (id, type) => dispatch => {
   dispatch({
     type: LOAD_PROBLEM_CONTENT,
-    payload: docDetails
+    payload: { id, type }
   });
-
+};
 export default {
-  loadProblemContent
+  loadIdForRender
 };

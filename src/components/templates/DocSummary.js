@@ -1,18 +1,18 @@
-import React from "react";
-import fp from "lodash/fp";
-import { connect } from "react-redux";
-import { withRouter } from "react-router";
-import { Button } from "@shopify/polaris";
+import React from 'react';
+import fp from 'lodash/fp';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
+import { Button } from '@shopify/polaris';
 
-import renderActions from "../../actions/render";
+import renderActions from '../../actions/render';
 
-const goToDetailsPage = (history, docDetails, loadDocDetailsToRender) => {
-  history.push("/problem");
-  loadDocDetailsToRender(docDetails);
+const goToDetailsPage = (history, id, type, updateIdToRender) => {
+  history.push('/problem');
+  updateIdToRender(id, type);
 };
 
-const DocSummary = ({ docDetails, history, loadDocDetailsToRender }) => {
-  const { id, description, location: { _lat, _long } = {} } = docDetails;
+const DocSummary = ({ id, type, docDetails, history, updateIdToRender }) => {
+  const { description, location: { _lat, _long } = {} } = docDetails;
   return (
     <div>
       <div>ID: {id}</div>
@@ -21,9 +21,7 @@ const DocSummary = ({ docDetails, history, loadDocDetailsToRender }) => {
       <Button
         primary
         size="large"
-        onClick={() =>
-          goToDetailsPage(history, docDetails, loadDocDetailsToRender)
-        }
+        onClick={() => goToDetailsPage(history, id, type, updateIdToRender)}
       >
         See Details
       </Button>
@@ -31,16 +29,22 @@ const DocSummary = ({ docDetails, history, loadDocDetailsToRender }) => {
   );
 };
 
+const mapStateToProps = (state, { id, type }) => {
+  return {
+    docDetails: state.firestore.data[type] && state.firestore.data[type][id],
+    id,
+    type
+  };
+};
+
 const mapDispatchToProps = {
-  loadDocDetailsToRender: renderActions.loadProblemContent
+  updateIdToRender: renderActions.loadIdForRender
 };
 
 export default fp.compose(
   connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps
   ),
   withRouter
 )(DocSummary);
-
-//compose(withRouter)(DocSummary);

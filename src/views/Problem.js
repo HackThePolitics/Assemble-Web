@@ -1,27 +1,34 @@
-import React from "react";
-import fp from "lodash/fp";
-import { connect } from "react-redux";
-import { withRouter } from "react-router";
-import { Button } from "@shopify/polaris";
+import React from 'react';
+import fp from 'lodash/fp';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
+import { Button } from '@shopify/polaris';
 
-const ProblemDetail = ({ problemDoc, history }) => {
-  const { id, description, location: { _lat, _long } = {} } = problemDoc;
-
-  return (
-    <div>
-      <Button primary size="large" onClick={() => history.goBack()}>
-        Go back
-      </Button>
-      <div>ID: {id}</div>
-      <div>Description: {description}</div>
-      {_lat && <div>Location: {`Lat:${_lat}. Long: ${_long}`}</div>}
-    </div>
-  );
+const ProblemDetail = ({ id, docDetails, history }) => {
+  //Quick hack to prevent page from crashing. Crashes when loading before Firestore is loaded
+  if (docDetails) {
+    const { description, location: { _lat, _long } = {} } = docDetails;
+    return (
+      <div>
+        <Button primary size="large" onClick={() => history.goBack()}>
+          Go back
+        </Button>
+        <div>ID: {id}</div>
+        <div>Description: {description}</div>
+        {_lat && <div>Location: {`Lat:${_lat}. Long: ${_long}`}</div>}
+      </div>
+    );
+  }
+  return null;
 };
 
-const mapStateToProps = state => ({
-  problemDoc: state.render.problem
-});
+const mapStateToProps = state => {
+  const { id, type } = state.render.problem;
+  return {
+    id,
+    docDetails: state.firestore.data[type] && state.firestore.data[type][id]
+  };
+};
 
 export default fp.compose(
   connect(mapStateToProps),

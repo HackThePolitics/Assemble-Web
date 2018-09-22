@@ -1,14 +1,16 @@
-import React, { Component } from "react";
-import { Switch, Route } from "react-router-dom";
-import Header from "./components/Headers";
-import Home from "./views/Home";
-import PostalCode from "./views/PostalCode";
-import Problem from "./views/Problem";
-import Solutions from "./views/Solutions";
-import Test from "./views/Test";
-import FirebaseTest from "./views/FirebaseTest";
+import React, { Component } from 'react';
+import { compose } from 'redux';
+import { Switch, Route } from 'react-router-dom';
+import Header from './components/Headers';
+import Home from './views/Home';
+import PostalCode from './views/PostalCode';
+import Problem from './views/Problem';
+import Solutions from './views/Solutions';
+import Test from './views/Test';
+import FirebaseTest from './views/FirebaseTest';
+import { firestoreConnect } from 'react-redux-firebase';
 
-import firebaseConfig from "./config/firebase";
+import firebaseConfig from './config/firebase';
 
 class App extends Component {
   render() {
@@ -32,4 +34,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default compose(firestoreConnect(['problems', 'solutions']))(App);
