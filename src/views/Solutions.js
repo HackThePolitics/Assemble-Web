@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Layout, } from '@shopify/polaris';
+import { Layout, Card, FormLayout, TextField, Button } from '@shopify/polaris';
 import TalkingPointList from '../components/TalkingPointList';
+import AddATalkingPoint from '../components/AddATalkingPoint';
 
 class Solutions extends Component {
   render() {
@@ -14,6 +15,8 @@ class Solutions extends Component {
             <TalkingPointList />
           </Layout.Section>
         </Layout>
+        <br/>
+        <AddATalkingPoint/>
       </div>
     );
   }
