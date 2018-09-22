@@ -7,6 +7,7 @@ import {
   Button,
   Heading,
   Select,
+  ButtonGroup,
 } from '@shopify/polaris';
 
 const options = [
@@ -38,13 +39,15 @@ class AddATalkingPoint extends Component {
                 onChange={(value) => this.setState({talkingPointText: value})}
                 multiline={4}
               />
-               <Select
-                  options={options}
-                  label=""
-                  onChange={(value) => this.handleProConsChange(value)}
-                  value={this.state.side} 
-                />
-              <Button primary>Submit</Button>
+              <ButtonGroup>
+                <Select
+                    options={options}
+                    label=""
+                    onChange={(value) => this.handleProConsChange(value)}
+                    value={this.state.side} 
+                  />
+                <Button primary>Submit</Button>
+              </ButtonGroup>
             </FormLayout>
           </Card>
         </Layout.Section>
