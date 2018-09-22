@@ -34,7 +34,7 @@ class AddATalkingPoint extends Component {
         <Layout.Section>
           <Card sectioned>
             <FormLayout>
-              <Heading>Add a talking point</Heading>
+              <Heading>ADD A TALKING POINT</Heading>
               <TextField
                 onChange={(value) => this.setState({talkingPointText: value})}
                 multiline={4}
