@@ -2,6 +2,12 @@
   "name": "hello",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
     "@shopify/polaris": "^2.10.0",
     "firebase": "^5.5.1",
@@ -19,13 +25,10 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
   "devDependencies": {
     "redux-devtools-extension": "^2.13.5"
+  },
+  "prettier": {
+    "singleQuote": true
   }
 }

@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import fp from "lodash/fp";
-import { connect } from "react-redux";
-import { withRouter } from "react-router";
+import React, { Component } from 'react';
+import fp from 'lodash/fp';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 
-import IssuesList from "../components/IssuesList";
-import SolutionsList from "../components/SolutionsList";
-import { LEVELS } from "../constants";
+import IssuesList from '../components/IssuesList';
+import SolutionsList from '../components/SolutionsList';
+import { LEVELS } from '../constants';
 
 class Home extends Component {
   componentWillMount() {
