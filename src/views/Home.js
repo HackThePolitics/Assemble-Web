@@ -3,7 +3,9 @@ import fp from "lodash/fp";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 
-import ProblemList from "../components/ProblemList";
+import IssuesList from "../components/IssuesList";
+import SolutionsList from "../components/SolutionsList";
+import { LEVELS } from "../constants";
 
 class Home extends Component {
   componentWillMount() {
@@ -15,7 +17,12 @@ class Home extends Component {
   render() {
     return (
       <div>
-        This is home. Here is Problem List: <ProblemList />
+        <IssuesList headerTitle="Top Local Issues" filter={LEVELS.MUNICIPAL} />
+        <IssuesList
+          headerTitle="Top Toronto Issues"
+          filter={LEVELS.PROVINCIAL}
+        />
+        <SolutionsList headerTitle="Hotly debated solutions" />
       </div>
     );
   }
