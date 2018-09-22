@@ -5,6 +5,7 @@ import Home from './views/Home';
 import PostalCode from './views/PostalCode';
 import Solutions from './views/Solutions';
 import Test from './views/Test';
+import FirebaseTest from './views/FirebaseTest';
 
 import firebaseConfig from './config/firebase';
 
@@ -24,6 +25,7 @@ class App extends Component {
           <Route path="/problems/:problemId/solutions" component={Solutions} />
           <Route path="/postal" component={PostalCode} />
           <Route path="/test" component={Test} />
+          <Route path="/firebase-test" component={FirebaseTest} />
         </Switch>
       </div>
     );
