@@ -5,10 +5,11 @@ import Header from './components/Headers';
 import Home from './views/Home';
 import PostalCode from './views/PostalCode';
 import Problem from './views/Problem';
-import Solutions from './views/Solutions';
 import Test from './views/Test';
 import FirebaseTest from './views/FirebaseTest';
 import { firestoreConnect } from 'react-redux-firebase';
+import Problem from "./views/Problem";
+import SolutionsToTheProblem from "./views/SolutionsToTheProblem";
 
 import firebaseConfig from './config/firebase';
 
