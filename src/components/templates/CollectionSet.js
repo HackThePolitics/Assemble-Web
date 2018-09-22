@@ -5,7 +5,9 @@ import DocSummary from "./DocSummary";
 const CollectionSet = ({ collection }) => (
   <div>
     {collection &&
-      collection.map((item, index) => <DocSummary key={index + 1} {...item} />)}
+      collection.map((item, index) => (
+        <DocSummary key={index + 1} docDetails={item} />
+      ))}
   </div>
 );
 

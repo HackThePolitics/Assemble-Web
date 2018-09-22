@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Header from "./components/Headers";
 import Home from "./views/Home";
 import PostalCode from "./views/PostalCode";
+import Problem from "./views/Problem";
 import Solutions from "./views/Solutions";
 import Test from "./views/Test";
 import FirebaseTest from "./views/FirebaseTest";
@@ -23,6 +24,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Home} />
           {/* <Route path="/problems/:problemId/solutions" component={Solutions} /> */}
+          <Route path="/problem" component={Problem} />
           <Route path="/postal" component={PostalCode} />
           <Route path="/test" component={Test} />
           <Route path="/firebase-test" component={FirebaseTest} />

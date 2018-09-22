@@ -5,6 +5,7 @@ import { withRouter } from "react-router";
 
 import IssuesList from "../components/IssuesList";
 import SolutionsList from "../components/SolutionsList";
+import { LEVELS } from "../constants";
 
 class Home extends Component {
   componentWillMount() {
@@ -16,8 +17,11 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <IssuesList headerTitle="Top Local Issues" filter="local" />
-        <IssuesList headerTitle="Top Toronto Issues" filter="city" />
+        <IssuesList headerTitle="Top Local Issues" filter={LEVELS.MUNICIPAL} />
+        <IssuesList
+          headerTitle="Top Toronto Issues"
+          filter={LEVELS.PROVINCIAL}
+        />
         <SolutionsList headerTitle="Hotly debated solutions" />
       </div>
     );
