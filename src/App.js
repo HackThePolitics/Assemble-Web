@@ -9,8 +9,6 @@ import FirebaseTest from './views/FirebaseTest';
 
 import firebaseConfig from './config/firebase';
 
-import './App.css';
-
 class App extends Component {
   render() {
     if (!firebaseConfig) {
