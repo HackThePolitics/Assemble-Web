@@ -15,6 +15,16 @@ class ProblemDetailPage extends Component {
   render() {
     const title =
       this.props.title || 'The Closing of Riverdale Homeless Shelter';
+    const contextContent = [
+      'Video: Riverdale Shelter Open House 2014',
+      'Article: The Effects of Community Shelters on Surburban Areas ',
+      'Journal: Research on Ridings in Toronto in 2016 ',
+      'Video: News Interview with John Tory',
+      'Article: Building Cities: Toronto’s Healthy Future ',
+      'Video: Ending Homelessness in Canada',
+      'Journal: Gender and Community - Impacts of Shelters',
+      'Journal: Risk Factors for Long-Term Homelessness'
+    ];
     return (
       <Fragment>
         <div
@@ -115,6 +125,33 @@ class ProblemDetailPage extends Component {
           </Card>
           <br />
           <Heading element="h1">TOP SOLUTIONS</Heading>
+          <br />
+          <br />
+          <Heading element="h1">CONTEXT</Heading>
+          <br />
+          <div className="context-container">
+            <div className="context-container-left">
+              {contextContent
+                .slice(0, Math.floor(contextContent.length / 2))
+                .map((context, i) => (
+                  <div key={i} className="context-text">
+                    {context}
+                  </div>
+                ))}
+            </div>
+            <div className="context-container-right">
+              {contextContent
+                .slice(
+                  Math.floor(contextContent.length / 2),
+                  contextContent.length
+                )
+                .map((context, i) => (
+                  <div key={i} className="context-text">
+                    {context}
+                  </div>
+                ))}
+            </div>
+          </div>
           <br />
           <br />
           <Heading element="h1">RELATED ISSUES</Heading>

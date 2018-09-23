@@ -48,3 +48,18 @@
   display: flex;
   color: #333333;
 }
+
+.context-container {
+  display: flex;
+}
+
+.context-text {
+  font-size: 14px;
+  letter-spacing: 0.4px;
+  color: #007cff;
+}
+
+.context-container-left,
+.context-container-right {
+  width: 50%;
+}
