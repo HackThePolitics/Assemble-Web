@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 
@@ -8,15 +8,14 @@ import { PROBLEMS } from '../constants';
 
 // Blank filter will default to show all
 const IssuesList = ({ headerTitle, problems, filter = undefined }) => (
-  <div className="collection-container">
-    <h1>{headerTitle}</h1>
+  <Fragment>
     {problems && (
       <CollectionSet
         collection={filterItemsToInclude(problems, filter)}
         type={PROBLEMS}
       />
     )}
-  </div>
+  </Fragment>
 );
 
 export default compose(
