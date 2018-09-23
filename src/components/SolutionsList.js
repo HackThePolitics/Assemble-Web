@@ -36,7 +36,10 @@ class Solution extends React.Component {
           <div className="solutions-list__arrow-up" />
           {this.state.upvotes}
         </div>
-        <SolutionSummary className="solutions-summary__content" />
+        <SolutionSummary
+          className="solutions-summary__content"
+          {...this.props.item}
+        />
         <SolutionFollower />
       </div>
     );
@@ -48,21 +51,23 @@ class Solution extends React.Component {
 const SolutionsSummaryList = ({ solutions, filter }) => (
   <div className="solutions-summary-section">
     {solutions
-      ? filterItemsToInclude(solutions, filter).map(
-          ({ title, level }, index) => (
-            <Solution key={index} title={title} level={level} />
-          )
-        )
+      ? filterItemsToInclude(solutions, filter).map((item, index) => (
+          <Solution key={index} item={item} />
+        ))
       : null}
-    {/* <Solution title="Relocate Homeless Shelter to Jones St. and First Ave." />
-    <Solution title="Relocate Homeless Shelter to Jones St. and First Ave." /> */}
   </div>
 );
 
-// export default SolutionsSummaryList;
+const findRelatedSolutions = (currentProblemId, allSolutions) =>
+  allSolutions.filter(solution => solution.problemId === currentProblemId);
 
 export default compose(
-  connect((state, _) => ({
-    solutions: state.firestore.ordered.solutions
-  }))
+  connect((state, _) => {
+    const currentProblemId = state.render.problems.id;
+    const allSolutions = state.firestore.ordered.solutions;
+    findRelatedSolutions(currentProblemId, allSolutions);
+    return {
+      solutions: findRelatedSolutions(currentProblemId, allSolutions)
+    };
+  })
 )(SolutionsSummaryList);

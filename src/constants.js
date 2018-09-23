@@ -6,5 +6,6 @@ export const LEVELS = {
   FEDERAL: 'Federal'
 };
 export const LOAD_PROBLEM_CONTENT = 'LOAD_PROBLEM_CONTENT';
+export const LOAD_SOLUTION_CONTENT = 'LOAD_SOLUTION_CONTENT';
 export const PROBLEMS = 'problems';
 export const SOLUTIONS = 'solutions';

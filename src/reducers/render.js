@@ -1,20 +1,25 @@
-import { LOAD_PROBLEM_CONTENT } from '../constants';
+import { LOAD_PROBLEM_CONTENT, LOAD_SOLUTION_CONTENT } from '../constants';
 
 const initialState = {
-  problem: {
-    id: '1K5q4TNgbD8jT1A7mwbK',
+  problems: {
+    id: 'DEFAULT',
     type: 'problems'
+  },
+  solutions: {
+    id: 'DEFAULLT',
+    type: 'solutions'
   }
 };
 
-const problems = (state = initialState, action) => {
+export const render = (state = initialState, action) => {
   switch (action.type) {
     case LOAD_PROBLEM_CONTENT:
       return { ...state, problems: action.payload };
-
+    case LOAD_SOLUTION_CONTENT:
+      return { ...state, solutions: action.payload };
     default:
       return state;
   }
 };
 
-export default problems;
+export default render;
