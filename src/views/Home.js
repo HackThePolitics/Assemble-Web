@@ -11,6 +11,8 @@ import {
 } from '@shopify/polaris';
 
 import IssuesList from '../components/IssuesList';
+
+import SolutionsView from '../components/SolutionsView';
 import { LEVELS } from '../constants';
 import logo from '../assets/one-riding.png';
 

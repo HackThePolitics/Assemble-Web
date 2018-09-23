@@ -5,7 +5,7 @@ class SolutionFollower extends Component {
   constructor() {
     super();
     this.state = {
-      isFollowed: false,
+      isFollowed: false
     };
   }
 
@@ -15,24 +15,30 @@ class SolutionFollower extends Component {
         <div
           style={{
             display: 'flex',
-            justifyContent: 'flex-end',
+            justifyContent: 'flex-end'
           }}
         >
-          <span style={{ marginRight: '15px'}}>
+          <span style={{ marginRight: '15px' }}>
             {this.props.followers ? this.props.followers : 253} Followers
           </span>
-          <span>
+          <span className="solution-follower__button">
             <Button
               size="slim"
               primary={!this.state.isFollowed}
-              onClick={() => this.setState({isFollowed: !this.state.isFollowed})}
+              onClick={() =>
+                this.setState({ isFollowed: !this.state.isFollowed })
+              }
             >
               {this.state.isFollowed ? 'Unfollow' : 'Follow'}
             </Button>
           </span>
         </div>
-        <div style={{ textAlign: 'right', paddingTop: '10px'}}>Owner: Paige Sun</div>
-        <div style={{ textAlign: 'right', paddingTop: '5px'}}>Created: 18 days ago</div>
+        <div style={{ textAlign: 'right', paddingTop: '10px' }}>
+          Owner: Paige Sun
+        </div>
+        <div style={{ textAlign: 'right', paddingTop: '5px' }}>
+          Created: 18 days ago
+        </div>
       </div>
     );
   }

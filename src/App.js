@@ -9,6 +9,7 @@ import Problem from './views/Problem';
 import Test from './views/Test';
 import FirebaseTest from './views/FirebaseTest';
 import SolutionDetails from './views/SolutionDetails';
+import Solutions from './views/Solutions';
 
 import firebaseConfig from './config/firebase';
 
@@ -25,6 +26,7 @@ class App extends Component {
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route path="/solutionsTest" component={Solutions} />
           {/* <Route path="/problems/:problemId/solutions" component={Solutions} /> */}
           <Route path="/problems" component={Problem} />
           <Route path="/postal" component={PostalCode} />
