@@ -2,30 +2,36 @@ import React from 'react';
 import fp from 'lodash/fp';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { Button } from '@shopify/polaris';
+import { Layout } from '@shopify/polaris';
 
 import renderActions from '../../actions/render';
 
 const goToDetailsPage = (history, id, type, updateIdToRender) => {
-  history.push('/problem');
+  history.push(`/${type}`);
   updateIdToRender(id, type);
 };
 
 const DocSummary = ({ id, type, docDetails, history, updateIdToRender }) => {
-  const { description, location: { _lat, _long } = {} } = docDetails;
+  const { title, bannerImageUrl } = docDetails;
   return (
-    <div>
-      <div>ID: {id}</div>
-      <div>Description: {description}</div>
-      {_lat && <div>Location: {`Lat:${_lat}. Long: ${_long}`}</div>}
-      <Button
-        primary
-        size="large"
+    <Layout.Section secondary>
+      <div
+        className="card"
+        style={{ cursor: 'pointer' }}
         onClick={() => goToDetailsPage(history, id, type, updateIdToRender)}
       >
-        See Details
-      </Button>
-    </div>
+        <div
+          className="card-img-top doc-summary-image"
+          style={{
+            backgroundImage: `url("${bannerImageUrl}")`
+          }}
+          alt="Card image cap"
+        />
+        <div className="card-body" style={{ height: '63px' }}>
+          <div>{title}</div>
+        </div>
+      </div>
+    </Layout.Section>
   );
 };
 

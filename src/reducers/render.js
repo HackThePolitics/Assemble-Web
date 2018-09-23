@@ -2,15 +2,15 @@ import { LOAD_PROBLEM_CONTENT } from '../constants';
 
 const initialState = {
   problem: {
-    id: 'WaJE9FppP9x1Wc4EaFk1',
-    type: 'problem'
+    id: '1K5q4TNgbD8jT1A7mwbK',
+    type: 'problems'
   }
 };
 
 const problems = (state = initialState, action) => {
   switch (action.type) {
     case LOAD_PROBLEM_CONTENT:
-      return { ...state, problem: action.payload };
+      return { ...state, problems: action.payload };
 
     default:
       return state;

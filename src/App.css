@@ -7,3 +7,10 @@
 .generic-bottom-padding {
   padding-bottom: 30px;
 }
+
+.doc-summary-image {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 160px;
+}
