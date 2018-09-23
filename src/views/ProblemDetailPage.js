@@ -13,11 +13,12 @@ import '../components/SolutionSummary.css';
 
 class ProblemDetailPage extends Component {
   render() {
+    const title = this.props.title || 'The Closing of Riverdale Homeless Shelter';
     return (
       <div className="app-container">
         <Layout>
           <Layout.Section>
-            <Heading element="h1">The Closing of Riverdale Homeless Shelter <span className="location-tag">MUNICIPAL</span></Heading>
+            <Heading element="h1">{title} <span className="location-tag">MUNICIPAL</span></Heading>
             <div style={{display: 'flex', justifyContent: 'flex-end', alignItems: 'center'}}>
               <span style={{paddingRight: '10px'}}>1835 Followers</span>
               <Button primary size="slim">Follow</Button>

@@ -3,20 +3,24 @@ import fp from 'lodash/fp';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { Button } from '@shopify/polaris';
+import ProblemDetailPage from './ProblemDetailPage';
 
 const ProblemDetail = ({ id, docDetails, history }) => {
   //Quick hack to prevent page from crashing. Crashes when loading before Firestore is loaded
   if (docDetails) {
-    const { description, location: { _lat, _long } = {} } = docDetails;
+    const { title, location: { _lat, _long } = {} } = docDetails;
     return (
-      <div>
-        <Button primary size="large" onClick={() => history.goBack()}>
-          Go back
-        </Button>
-        <div>ID: {id}</div>
-        <div>Description: {description}</div>
-        {_lat && <div>Location: {`Lat:${_lat}. Long: ${_long}`}</div>}
-      </div>
+      <ProblemDetailPage
+        title={title}
+      />
+      // <div>
+      //   <Button primary size="large" onClick={() => history.goBack()}>
+      //     Go back
+      //   </Button>
+      //   <div>ID: {id}</div>
+      //   <div>Description: {description}</div>
+      //   {_lat && <div>Location: {`Lat:${_lat}. Long: ${_long}`}</div>}
+      // </div>
     );
   }
   return <div>Oops.</div>;
