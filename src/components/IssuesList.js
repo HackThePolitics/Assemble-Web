@@ -7,11 +7,11 @@ import { filterItemsToInclude } from '../utils';
 import { PROBLEMS } from '../constants';
 
 // Blank filter will default to show all
-const IssuesList = ({ headerTitle, problems, filter = undefined }) => (
+const IssuesList = ({ headerTitle, problems, filter = undefined, max = undefined}) => (
   <Fragment>
     {problems && (
       <CollectionSet
-        collection={filterItemsToInclude(problems, filter)}
+        collection={filterItemsToInclude(problems, filter, max)}
         type={PROBLEMS}
       />
     )}
