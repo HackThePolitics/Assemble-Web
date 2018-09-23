@@ -5,6 +5,7 @@ import { withRouter } from 'react-router';
 
 import IssuesList from '../components/IssuesList';
 import SolutionsList from '../components/SolutionsList';
+import RidingsMap from '../components/RidingsMap';
 import { LEVELS } from '../constants';
 
 class Home extends Component {
@@ -23,6 +24,7 @@ class Home extends Component {
           filter={LEVELS.PROVINCIAL}
         />
         <SolutionsList headerTitle="Hotly debated solutions" />
+        <RidingsMap />
       </div>
     );
   }
