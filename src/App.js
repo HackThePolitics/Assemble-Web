@@ -8,7 +8,7 @@ import PostalCode from './views/PostalCode';
 import Problem from './views/Problem';
 import Test from './views/Test';
 import FirebaseTest from './views/FirebaseTest';
-import SolutionsToTheProblem from './views/SolutionDetails';
+import SolutionDetails from './views/SolutionDetails';
 
 import firebaseConfig from './config/firebase';
 
