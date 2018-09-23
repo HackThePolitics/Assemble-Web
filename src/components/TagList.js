@@ -12,15 +12,17 @@ import Tag from './Tag';
 class TagList extends Component {
   render() {
     if (!Array.isArray(this.props.tags)) {
-      return <div></div>;
+      return <div />;
     }
 
     return (
-      <Stack>
-        {
-          this.props.tags.map(tag => <Tag category={tag}/>)
-        }
-      </Stack>
+      <div className="tag-list">
+        <Stack>
+          {this.props.tags.map(tag => (
+            <Tag category={tag} />
+          ))}
+        </Stack>
+      </div>
     );
   }
 }

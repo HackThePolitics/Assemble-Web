@@ -1,0 +1,36 @@
+.solutions-list-item {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid lightgrey;
+  padding-top: 60px;
+}
+
+.solutions-list-item .solution-summary {
+  width: 60%;
+}
+
+.solutions-list-item .solution-summary__progress {
+  display: none;
+}
+
+.solutions-list-item .tag-list {
+  display: none;
+}
+
+.solutions-summary__upvotes {
+  width: 40px;
+  color: blue;
+}
+
+.solutions-list-item .solution-follower__button {
+  display: none;
+}
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+
+  border-bottom: 10px solid blue;
+}
