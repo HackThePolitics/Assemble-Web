@@ -33,6 +33,7 @@ class SolutionSummary extends Component {
             tristique risus.
           </p>
         </TextContainer>
+        <br/>
         <div className="solution-summary__progress" style={{ width: '231px' }}>
           <div style={{ width: '231px' }}>
             <img style={{ paddingLeft: '10px' }} src={grassRootProgress} />
