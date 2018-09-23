@@ -55,7 +55,7 @@ const userProfiles = [
 class SolutionsToTheProblem extends Component {
   render() {
     return (
-      <div className="generic-bottom-padding">
+      <div className="app-container generic-bottom-padding">
         <Layout>
           <Layout.Section>
             <SolutionSummary />
