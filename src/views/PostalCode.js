@@ -5,6 +5,8 @@ import { withRouter } from 'react-router';
 import { TextField, Button } from '@shopify/polaris';
 import districtAction from '../actions/district';
 
+import TObackgroundImage from '../assets/toronto-image.png';
+
 const verifyPostalCode = postalCode => {
   const postalCodeRegex = /^([A-Z][0-9][A-Z])\s*([0-9][A-Z][0-9])$/;
   return postalCodeRegex.test(postalCode);
@@ -38,6 +40,12 @@ class PostalCode extends Component {
   render() {
     return (
       <div className="postal-page-container">
+        <div
+          className="postal-page-bg"
+          style={{
+            backgroundImage: `url("${TObackgroundImage}")`
+          }}
+        />
         <div className="language-selector">
           EN | <span className="highlighted">FR</span>
         </div>
@@ -60,7 +68,7 @@ class PostalCode extends Component {
           placeholder="Please enter your postal code here."
         />
         <br />
-        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+        <div className="postal-page-submit">
           <Button primary size="large" onClick={() => this.onPostalSubmit()}>
             Submit
           </Button>
