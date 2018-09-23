@@ -10,16 +10,38 @@ import './SolutionsList.css';
 
 import { filterItemsToInclude } from '../utils';
 
-const Solution = ({ upvotes = 1049, title }) => (
-  <div className="solutions-list-item">
-    <div className="solutions-summary__upvotes">
-      <div className="arrow-up" />
-      <p>{upvotes}</p>
-    </div>
-    <SolutionSummary className="solutions-summary__content" />
-    <SolutionFollower />
-  </div>
-);
+class Solution extends React.Component {
+  constructor({ upvotes }) {
+    super();
+    this.state = {
+      upvotes: upvotes || 238 + Math.floor(Math.random() * 100) //should be coming from redux
+    };
+  }
+
+  loadMoreComments() {
+    console.log('supposed to load more comments');
+  }
+
+  onUpvoteClick() {
+    console.log('upvotesss+++');
+
+    const upvotes = this.state.upvotes + 1;
+    this.setState({ upvotes });
+  }
+
+  render() {
+    return (
+      <div className="solutions-list-item">
+        <div className="upvote-container" onClick={() => this.onUpvoteClick()}>
+          <div className="arrow-up" />
+          {this.state.upvotes}
+        </div>
+        <SolutionSummary className="solutions-summary__content" />
+        <SolutionFollower />
+      </div>
+    );
+  }
+}
 
 // Blank filter will default to show all
 
