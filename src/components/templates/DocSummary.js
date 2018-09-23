@@ -12,6 +12,7 @@ const goToDetailsPage = (history, id, type, updateIdToRender) => {
 };
 
 const DocSummary = ({ id, type, docDetails, history, updateIdToRender }) => {
+  console.log('docDetails', docDetails)
   if (!docDetails) {
     return null;
   }
@@ -40,6 +41,7 @@ const DocSummary = ({ id, type, docDetails, history, updateIdToRender }) => {
 };
 
 const mapStateToProps = (state, { id, type }) => {
+  console.log('firebase map', type, id);
   return {
     docDetails: state.firestore.data[type] && state.firestore.data[type][id],
     id,

@@ -33,7 +33,7 @@ class Solution extends React.Component {
     return (
       <div className="solutions-list-item">
         <div className="upvote-container" onClick={() => this.onUpvoteClick()}>
-          <div className="arrow-up" />
+          <div className="solutions-list__arrow-up" />
           {this.state.upvotes}
         </div>
         <SolutionSummary className="solutions-summary__content" />
