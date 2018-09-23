@@ -1,0 +1,56 @@
+.talking-points-container {
+  display: inline-flex;
+  padding: 10px;
+}
+
+.talking-point-comment {
+  width: 100%;
+  padding-top: 10px;
+  margin-left: 30px;
+  border-top: 1px solid;
+  border-color: #eceece;
+  padding-bottom: 5px;
+  font-size: 12px;
+}
+
+.talking-point-card {
+  color: #333333;
+}
+.talking-point-header {
+  font-size: 14px;
+  letter-spacing: 0.4px;
+  padding-bottom: 5px;
+}
+
+.upvote-container {
+  flex-direction: column;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0 10px;
+}
+.arrow-up {
+  width: 15px;
+  height: 25px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #583bff;
+}
+
+.user-profile-container {
+  flex-direction: column;
+  height: 35px;
+  display: flex;
+  align-items: center;
+}
+.user-profile-image {
+  width: 32px;
+  border-radius: 100%;
+  margin: 0 18px;
+}
+.user-profile-name {
+  font-size: 10px;
+  letter-spacing: 0.5px;
+}
