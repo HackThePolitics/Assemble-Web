@@ -12,6 +12,10 @@ const goToDetailsPage = (history, id, type, updateIdToRender) => {
 };
 
 const DocSummary = ({ id, type, docDetails, history, updateIdToRender }) => {
+  if (!docDetails) {
+    return null;
+  }
+
   const { title, bannerImageUrl } = docDetails;
   return (
     <Layout.Section secondary>
