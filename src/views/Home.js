@@ -18,9 +18,9 @@ import logo from '../assets/one-riding.png';
 
 class Home extends Component {
   componentWillMount() {
-    // if (!this.props.postalCode) {
-    //   this.props.history.push("/postal");
-    // }
+    if (!this.props.postalCode) {
+      this.props.history.push('/postal');
+    }
   }
 
   render() {
@@ -45,7 +45,7 @@ class Home extends Component {
             >
               <Layout>
                 <Layout.Section secondary>
-                  <img width="260px" height="190px" src={logo} alt="logo" />
+                  <img width="100%" height="220px" src={logo} alt="logo" />
                 </Layout.Section>
                 <Layout.Section>
                   <div
