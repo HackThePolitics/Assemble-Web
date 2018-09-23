@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Card, Button} from '@shopify/polaris';
 
 import './TalkingPoint.css';
 
@@ -7,7 +6,7 @@ class TalkingPoint extends Component {
   constructor() {
     super();
     this.state = {
-      upvotes: 0, //should be coming from redux
+      upvotes: 238 + Math.floor(Math.random() * 100) //should be coming from redux
     };
   }
 
@@ -24,18 +23,27 @@ class TalkingPoint extends Component {
 
   render() {
     return (
-      <div>
-        <div>
-          <Button icon="caretUp" onClick={() => this.onUpvoteClick()} />
+      <div className="talking-points-container">
+        <div className="upvote-container" onClick={() => this.onUpvoteClick()}>
+          <div className="arrow-up" />
           {this.state.upvotes}
         </div>
-        <Card
-          title="This is supposed to be a good talking point"
-          sectioned
-        >
+        <div className="user-profile-container">
+          <img className="user-profile-image" src={this.props.user.image} />
+          <div className="user-profile-name">{this.props.user.name}</div>
+        </div>
+        <div className="talking-point-card">
+          <div className="talking-point-header">
+            {this.props.user.talkingpoint}
+          </div>
           <p className="talking-point-comment">This is the first comment</p>
-          <Button onClick={ () => this.loadMoreComments() }>View more comments</Button>
-        </Card>
+          <div
+            className="talking-point-comment"
+            onClick={() => this.loadMoreComments()}
+          >
+            View more comments
+          </div>
+        </div>
       </div>
     );
   }

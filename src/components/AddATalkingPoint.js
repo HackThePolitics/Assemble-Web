@@ -7,12 +7,12 @@ import {
   Button,
   Heading,
   Select,
-  ButtonGroup,
+  ButtonGroup
 } from '@shopify/polaris';
 
 const options = [
   { label: 'Pro', value: 'pro' },
-  { label: 'Cons', value: 'cons' },
+  { label: 'Cons', value: 'cons' }
 ];
 
 class AddATalkingPoint extends Component {
@@ -20,36 +20,43 @@ class AddATalkingPoint extends Component {
     super();
     this.state = {
       talkingPointText: '',
-      side: 'pro',
+      side: 'pro'
     };
   }
 
   handleProConsChange(value) {
-    this.setState({side: value});
+    this.setState({ side: value });
   }
 
   render() {
     return (
       <Layout>
         <Layout.Section>
-          <Card sectioned>
-            <FormLayout>
-              <Heading>ADD A TALKING POINT</Heading>
-              <TextField
-                onChange={(value) => this.setState({talkingPointText: value})}
-                multiline={4}
+          <FormLayout>
+            <Heading>ADD A TALKING POINT</Heading>
+            <TextField
+              onChange={value => this.setState({ talkingPointText: value })}
+              multiline={4}
+            />
+            <div
+              class="Polaris-ButtonGroup"
+              style={{ justifyContent: 'flex-end' }}
+            >
+              <Select
+                options={options}
+                label=""
+                onChange={value => this.handleProConsChange(value)}
+                value={this.state.side}
               />
-              <ButtonGroup>
-                <Select
-                    options={options}
-                    label=""
-                    onChange={(value) => this.handleProConsChange(value)}
-                    value={this.state.side} 
-                  />
-                <Button primary>Submit</Button>
-              </ButtonGroup>
-            </FormLayout>
-          </Card>
+              <button
+                type="button"
+                class="Polaris-Button Polaris-Button--primary"
+                style={{ marginLeft: '10px', fontSize: '1.4rem' }}
+              >
+                Submit
+              </button>
+            </div>
+          </FormLayout>
         </Layout.Section>
       </Layout>
     );

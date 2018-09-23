@@ -5,9 +5,9 @@ class TalkingPointList extends Component {
   render() {
     return (
       <div>
-        <TalkingPoint />
-        <TalkingPoint />
-        <TalkingPoint />
+        {this.props.userProfiles.map(user => (
+          <TalkingPoint user={user} />
+        ))}
       </div>
     );
   }
