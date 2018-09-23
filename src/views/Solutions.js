@@ -23,8 +23,8 @@ class Solutions extends Component {
             <TalkingPointList />
           </Layout.Section>
         </Layout>
-        <br/>
-        <AddATalkingPoint/>
+        <br />
+        <AddATalkingPoint />
       </div>
     );
   }
