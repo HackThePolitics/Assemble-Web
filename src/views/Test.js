@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ProblemDetailPage from './ProblemDetailPage';
 import SolutionDetails from './SolutionDetails';
 
 class Test extends Component {
@@ -6,7 +7,9 @@ class Test extends Component {
     return (
       <div>
         {/* <h1>This is a test page for components</h1> */}
-        <SolutionDetails />
+        <ProblemDetailPage/>
+        {/* <SolutionDetails /> */}
+
       </div>
     );
   }

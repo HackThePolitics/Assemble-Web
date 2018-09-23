@@ -52,7 +52,7 @@ const userProfiles = [
   }
 ];
 
-class SolutionsToTheProblem extends Component {
+class SolutionDetails extends Component {
   render() {
     return (
       <div className="app-container generic-bottom-padding">
@@ -94,4 +94,4 @@ class SolutionsToTheProblem extends Component {
   }
 }
 
-export default SolutionsToTheProblem;
+export default SolutionDetails;
