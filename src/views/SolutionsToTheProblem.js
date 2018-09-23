@@ -4,6 +4,7 @@ import TalkingPointList from '../components/TalkingPointList';
 import AddATalkingPoint from '../components/AddATalkingPoint';
 import SolutionFollower from '../components/SolutionFollower';
 import SolutionSummary from '../components/SolutionSummary';
+import RidingsMap from '../components/RidingsMap';
 
 class SolutionsToTheProblem extends Component {
   render() {
@@ -17,8 +18,8 @@ class SolutionsToTheProblem extends Component {
             <SolutionFollower />
           </Layout.Section>
         </Layout>
-
         <br/>
+        <RidingsMap />
         <Layout>
           <Layout.Section secondary>
             <TalkingPointList />
