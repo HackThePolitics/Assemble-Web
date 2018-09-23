@@ -18,9 +18,9 @@ import logo from '../assets/one-riding.png';
 
 class Home extends Component {
   componentWillMount() {
-    // if (!this.props.postalCode) {
-    //   this.props.history.push('/postal');
-    // }
+    if (!this.props.postalCode) {
+      this.props.history.push('/postal');
+    }
   }
 
   render() {
