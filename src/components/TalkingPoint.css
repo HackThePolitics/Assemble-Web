@@ -47,8 +47,7 @@
 }
 .user-profile-image {
   width: 32px;
-  height: 32px;
-  border-radius: 16px;
+  border-radius: 100%;
   margin: 0 18px;
 }
 .user-profile-name {
