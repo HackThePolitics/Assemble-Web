@@ -6,6 +6,9 @@ import { Button, Heading, Layout, Card } from '@shopify/polaris';
 import TagList from '../components/TagList';
 import oneRiding from '../assets/one-riding.png'
 
+import IssuesList from '../components/IssuesList';
+import { LEVELS } from '../constants';
+
 import '../components/SolutionSummary.css';
 
 class ProblemDetailPage extends Component {
@@ -63,11 +66,9 @@ class ProblemDetailPage extends Component {
         <Heading element="h1">TOP SOLUTIONS</Heading>
         <br/>
         <br/>
-        <Layout>
-          <Layout.Section>
-            dsfa
-          </Layout.Section>
-        </Layout>
+        <Heading element="h1">RELATED ISSUES</Heading>
+        <br/>
+        <IssuesList filter={LEVELS.MUNICIPAL} max={3} />
       </div>
     );
   }
