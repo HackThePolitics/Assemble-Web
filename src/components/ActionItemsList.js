@@ -52,6 +52,7 @@ class ActionItemsList extends Component {
     return (
       <div className="action-items-list-section">
         <Heading>ACTION ITEMS</Heading>
+        <br/>
         <div className="action-items-list">
           <ActionItem status={true} usersCompleted={176} usersTotal={253} />
           <ActionItem usersCompleted={234} usersTotal={253} />
