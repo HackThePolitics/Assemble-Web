@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SolutionsToTheProblem from '../views/SolutionsToTheProblem';
+import SolutionsToTheProblem from './SolutionDetails';
 
 class Test extends Component {
   render() {
