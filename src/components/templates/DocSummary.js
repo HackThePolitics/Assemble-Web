@@ -2,9 +2,7 @@ import React from 'react';
 import fp from 'lodash/fp';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { Link } from 'react-router-dom';
 import { Layout } from '@shopify/polaris';
-import { Card, CardImg, CardBody } from 'reactstrap';
 
 import renderActions from '../../actions/render';
 

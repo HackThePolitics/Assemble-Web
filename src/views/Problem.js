@@ -19,11 +19,11 @@ const ProblemDetail = ({ id, docDetails, history }) => {
       </div>
     );
   }
-  return null;
+  return <div>Oops.</div>;
 };
 
 const mapStateToProps = state => {
-  const { id, type } = state.render.problem;
+  const { id, type } = state.render.problems;
   return {
     id,
     docDetails: state.firestore.data[type] && state.firestore.data[type][id]
