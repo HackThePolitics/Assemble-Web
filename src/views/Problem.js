@@ -11,10 +11,15 @@ const ProblemDetail = ({ id, docDetails, history }) => {
     const {
       title,
       bannerImageUrl,
-      location: { _lat, _long } = {}
+      location: { _lat, _long } = {},
+      level
     } = docDetails;
     return (
-      <ProblemDetailPage title={title} bannerImageUrl={bannerImageUrl} />
+      <ProblemDetailPage
+        title={title}
+        level={level}
+        bannerImageUrl={bannerImageUrl}
+      />
       // <div>
       //   <Button primary size="large" onClick={() => history.goBack()}>
       //     Go back

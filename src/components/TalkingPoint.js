@@ -36,7 +36,11 @@ class TalkingPoint extends Component {
           <div className="talking-point-header">
             {this.props.user.talkingpoint}
           </div>
-          <p className="talking-point-comment">This is the first comment</p>
+          <p className="talking-point-comment">
+            {this.props.talkingPoint &&
+              this.props.talkingPoint.comments &&
+              this.props.talkingPoint.comments[0]}
+          </p>
           <div
             className="talking-point-comment"
             onClick={() => this.loadMoreComments()}

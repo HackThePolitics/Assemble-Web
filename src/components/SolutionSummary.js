@@ -5,6 +5,7 @@ import { withRouter } from 'react-router';
 import { TextContainer, Heading } from '@shopify/polaris';
 import TagList from './TagList';
 import grassRootProgress from '../assets/group.svg';
+import LevelLabel from '../components/LevelLabel';
 
 import renderActions from '../actions/render';
 
@@ -15,12 +16,18 @@ const goToDetailsPage = (history, id, updateIdToRender) => {
   updateIdToRender(id, 'solutions');
 };
 
-const SolutionSummary = ({ id, docDetails, history, updateIdToRender }) => (
+const SolutionSummary = ({
+  id,
+  docDetails,
+  history,
+  updateIdToRender,
+  level
+}) => (
   <div className="solution-summary">
     <TextContainer>
       <Heading element="h1">
         {docDetails.title}
-        <span className="location-tag">MUNICIPAL</span>
+        <LevelLabel level={level} />
       </Heading>
       <p
         style={{ cursor: 'pointer' }}

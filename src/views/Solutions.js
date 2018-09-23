@@ -7,13 +7,15 @@ import TalkingPointList from '../components/TalkingPointList';
 import AddATalkingPoint from '../components/AddATalkingPoint';
 import ActionItemsList from '../components/ActionItemsList';
 import TagList from '../components/TagList';
+import LevelLabel from '../components/LevelLabel';
+import filter from 'lodash/filter';
 
 const Solutions = ({ docDetails }) => (
   <div className="app-container">
     <Layout>
       <Layout.Section>
         <Heading>{docDetails.title}</Heading>
-        <span className="location-tag">{docDetails.level.toUpperCase()}</span>
+        <LevelLabel level={docDetails.level} />
       </Layout.Section>
       <Layout.Section>
         <div className="problem-title">
@@ -33,7 +35,11 @@ const mapStateToProps = state => {
   const { id } = state.render.solutions;
   return {
     id,
-    docDetails: state.firestore.data.solutions[id]
+    docDetails: state.firestore.data.solutions[id],
+    talkingPoints: filter(
+      state.firestore.data['talking-points'],
+      ({ solutionId }) => solutionId === id
+    )
   };
 };
 

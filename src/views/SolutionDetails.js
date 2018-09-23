@@ -58,7 +58,7 @@ class SolutionDetails extends Component {
       <div className="app-container generic-bottom-padding">
         <Layout>
           <Layout.Section>
-            <SolutionSummary />
+            <SolutionSummary level={'Municipality'} />
           </Layout.Section>
           <Layout.Section secondary>
             <SolutionFollower />
@@ -78,13 +78,19 @@ class SolutionDetails extends Component {
             <h2 class="Polaris-Heading" style={{ color: '#08bd21' }}>
               PROS
             </h2>
-            <TalkingPointList userProfiles={userProfiles.slice(0, 3)} />
+            <TalkingPointList
+              userProfiles={userProfiles.slice(0, 3)}
+              talkingPoints={this.props.talkingPoints}
+            />
           </Layout.Section>
           <Layout.Section secondary>
             <h2 class="Polaris-Heading" style={{ color: '#f20303' }}>
               CONS
             </h2>
-            <TalkingPointList userProfiles={userProfiles.slice(3, 6)} />
+            <TalkingPointList
+              userProfiles={userProfiles.slice(3, 6)}
+              talkingPoints
+            />
           </Layout.Section>
         </Layout>
         <br />
