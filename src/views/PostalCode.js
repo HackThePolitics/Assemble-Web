@@ -34,7 +34,7 @@ class PostalCode extends Component {
     }
 
     this.props.onPostalSubmit(this.state.postal);
-    this.props.history.push('/');
+    this.props.history.push('/enlightment');
   }
 
   render() {
