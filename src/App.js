@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { compose } from 'redux';
 import { Switch, Route } from 'react-router-dom';
 import { firestoreConnect } from 'react-redux-firebase';
-import Header from './components/Headers';
+import Header from './components/Header';
 import Home from './views/Home';
 import PostalCode from './views/PostalCode';
 import Problem from './views/Problem';
