@@ -9,7 +9,10 @@ import oneRiding from '../assets/one-riding.png'
 import IssuesList from '../components/IssuesList';
 import { LEVELS } from '../constants';
 
+import SolutionsList from '../components/SolutionsList';
+
 import '../components/SolutionSummary.css';
+import './ProblemDetailPage.css';
 
 class ProblemDetailPage extends Component {
   render() {
@@ -65,6 +68,47 @@ class ProblemDetailPage extends Component {
         </Card>
         <br/>
         <Heading element="h1">TOP SOLUTIONS</Heading>
+        <br/>
+        <SolutionsList />
+        <div style={{display: 'flex', justifyContent: 'center'}}>
+          <Button>View more</Button>
+        </div>
+        <br/>
+        <br/>
+        <Heading element="h1">CONTEXT</Heading>
+        <div style={{display: 'flex', justifyContent: 'flex-end'}}>
+          <Button primary size="slim">Add</Button>
+        </div>
+        <Layout>
+          <Layout.Section secondary>
+            <p className="context-link">
+              Video: Riverdale Shelter Open House 2014
+            </p>
+            <p className="context-link">
+            Article: The Effects of Community Shelters on Surburban Areas 
+            </p>
+            <p className="context-link">
+            Journal: Research on Ridings in Toronto in 2016 
+            </p>
+            <p className="context-link">
+            Video: News Interview with John Tory
+            </p>
+          </Layout.Section>
+          <Layout.Section secondary>
+            <p className="context-link">
+            Article: Building Cities: Toronto’s Healthy Future 
+            </p>
+            <p className="context-link">
+            Video: Ending Homelessness in Canada
+            </p>
+            <p className="context-link">
+            Journal: Gender and Community - Impacts of Shelters
+            </p>
+            <p className="context-link">
+            Journal: Risk Factors for Long-Term Homelessness
+            </p>
+          </Layout.Section>
+        </Layout>
         <br/>
         <br/>
         <Heading element="h1">RELATED ISSUES</Heading>
