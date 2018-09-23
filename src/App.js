@@ -9,6 +9,7 @@ import Problem from './views/Problem';
 import Test from './views/Test';
 import FirebaseTest from './views/FirebaseTest';
 import SolutionDetails from './views/SolutionDetails';
+import Enlightment from './views/Enlightment';
 import Solutions from './views/Solutions';
 
 import firebaseConfig from './config/firebase';
@@ -32,6 +33,7 @@ class App extends Component {
           <Route path="/postal" component={PostalCode} />
           <Route path="/test" component={Test} />
           <Route path="/firebase-test" component={FirebaseTest} />
+          <Route path="/enlightment" component={Enlightment} />
         </Switch>
       </div>
     );
