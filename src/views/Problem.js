@@ -8,11 +8,13 @@ import ProblemDetailPage from './ProblemDetailPage';
 const ProblemDetail = ({ id, docDetails, history }) => {
   //Quick hack to prevent page from crashing. Crashes when loading before Firestore is loaded
   if (docDetails) {
-    const { title, location: { _lat, _long } = {} } = docDetails;
+    const {
+      title,
+      bannerImageUrl,
+      location: { _lat, _long } = {}
+    } = docDetails;
     return (
-      <ProblemDetailPage
-        title={title}
-      />
+      <ProblemDetailPage title={title} bannerImageUrl={bannerImageUrl} />
       // <div>
       //   <Button primary size="large" onClick={() => history.goBack()}>
       //     Go back
