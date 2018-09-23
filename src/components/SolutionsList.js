@@ -6,8 +6,6 @@ import CollectionSet from './templates/CollectionSet';
 import { filterItemsToInclude } from '../utils';
 import { SOLUTIONS } from '../constants';
 
-import './Base.css';
-
 // Blank filter will default to show all
 const SolutionsList = ({ headerTitle, solutions, filter = undefined }) => (
   <div className="collection-container">

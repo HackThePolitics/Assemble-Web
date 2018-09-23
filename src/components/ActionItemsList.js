@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Avatar, ProgressBar } from '@shopify/polaris';
+import { Avatar, ProgressBar, Heading } from '@shopify/polaris';
 import './ActionItemsList.css';
 import uncheckedImage from '../assets/checkbox-unchecked.png';
 import checkedImage from '../assets/checkbox-checked.png';
 
 const defaultDescription =
-  'Call your MP and tell them that you want them to vote yes on prop 27 because. Your MP is Julie Dabrusin';
+  'Call your MP and tell them that you want them to vote yes on prop 27 because.\n Your MP is Julie Dabrusin';
 
 const ActionItemCheckBox = ({ status = false }) =>
   status ? <img src={checkedImage} /> : <img src={uncheckedImage} />;
@@ -18,16 +18,17 @@ const ActionItem = ({
   usersTotal = 400
 }) => (
   <div className="action-item">
-    <Avatar
+    {/* <Avatar
       className="action-item__avatar"
       customer={false}
       source="https://picsum.photos/240/240"
       size="large"
-    />
+    /> */}
+    <img src="https://picsum.photos/240/240" className="action-item__avatar" />
 
     <div className="action-item__content">
       <div className="action-item__content__top">
-        <b className="action-item__title">{title}</b>
+        <Heading className="action-item__title">{title}</Heading>
         <div className="action-item__progress">
           <ProgressBar
             className="action-item__progress__bar"
@@ -49,8 +50,8 @@ const ActionItem = ({
 class ActionItemsList extends Component {
   render() {
     return (
-      <div className="action-items-list">
-        <h2>Action Items</h2>
+      <div className="action-items-list-section">
+        <Heading>ACTION ITEMS</Heading>
         <div className="action-items-list">
           <ActionItem status={true} usersCompleted={176} usersTotal={253} />
           <ActionItem usersCompleted={234} usersTotal={253} />

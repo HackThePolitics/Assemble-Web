@@ -1,0 +1,30 @@
+.ridings-map-container {
+  display: flex;
+  border-radius: 8px;
+  background-color: #fafafa;
+  padding: 30px;
+}
+
+.ridings-legend {
+  width: 181px;
+  height: 168px;
+  object-fit: contain;
+}
+
+.ridings-map-middle {
+  width: 303px;
+  height: 239.2px;
+  object-fit: contain;
+}
+
+.ridings-map-left {
+  width: 35%;
+}
+
+.ridings-map-right {
+  margin: 0 5% 0 5%;
+}
+
+.ridings-pie-chart {
+  margin: 38px 0 0 100px;
+}
