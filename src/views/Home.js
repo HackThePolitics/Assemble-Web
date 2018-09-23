@@ -11,7 +11,6 @@ import {
 } from '@shopify/polaris';
 
 import IssuesList from '../components/IssuesList';
-import SolutionsList from '../components/SolutionsList';
 import { LEVELS } from '../constants';
 import logo from '../assets/one-riding.png';
 
@@ -98,7 +97,6 @@ class Home extends Component {
             </PolarisCard>
           </Layout.Section>
         </Layout>
-        <SolutionsList headerTitle="Hotly debated solutions" />
       </div>
     );
   }

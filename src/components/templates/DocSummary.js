@@ -9,20 +9,30 @@ import { Card, CardImg, CardBody } from 'reactstrap';
 import renderActions from '../../actions/render';
 
 const goToDetailsPage = (history, id, type, updateIdToRender) => {
-  history.push('/problem');
+  history.push(`/${type}`);
   updateIdToRender(id, type);
 };
 
-const DocSummary = ({ id, type, docDetails, updateIdToRender }) => {
+const DocSummary = ({ id, type, docDetails, history, updateIdToRender }) => {
   const { title, bannerImageUrl } = docDetails;
   return (
     <Layout.Section secondary>
-      <Card>
-        <CardImg top width="100%" src={bannerImageUrl} alt="Card image cap" />
-        <CardBody>
-          <Link to={`/${type}`}>{title}</Link>
-        </CardBody>
-      </Card>
+      <div
+        className="card"
+        style={{ cursor: 'pointer' }}
+        onClick={() => goToDetailsPage(history, id, type, updateIdToRender)}
+      >
+        <div
+          className="card-img-top doc-summary-image"
+          style={{
+            backgroundImage: `url("${bannerImageUrl}")`
+          }}
+          alt="Card image cap"
+        />
+        <div className="card-body" style={{ height: '63px' }}>
+          <div>{title}</div>
+        </div>
+      </div>
     </Layout.Section>
   );
 };
