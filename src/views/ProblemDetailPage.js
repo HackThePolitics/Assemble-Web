@@ -111,7 +111,7 @@ class ProblemDetailPage extends Component {
                 <br />
               </Layout.Section>
               <Layout.Section secondary>
-                <img width="100%" height="240px" src={oneRiding} />
+                <img src={oneRiding} />
                 <br />
                 <br />
                 <div>Location: Riverdale</div>

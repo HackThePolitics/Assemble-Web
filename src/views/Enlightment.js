@@ -32,9 +32,9 @@ class Enlightment extends Component {
         >
           <div style={{display: 'flex'}}>
             <div style={{margin: "2px 0 0 0"}}>
-              <img width="220" height="220px" src={logo} alt="logo" />
+              <img src={logo} alt="logo" />
             </div>
-            <div style={{margin: "0 0 0 10px"}}>
+            <div style={{margin: "0 0 0 30px"}}>
               <h2>Our government is split into three levels with its own elected representatives. </h2>
               <br/>
               <p>
