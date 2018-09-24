@@ -22,7 +22,6 @@ const ActionItem = ({
   usersCompleted = 300,
   usersTotal = 400,
   specialNumber,
-  specialLink,
 }) => (
   <div className="action-item">
     {/* <Avatar
@@ -48,7 +47,7 @@ const ActionItem = ({
         </div>
       </div>
       <p className="action-item__description">{description}</p>
-      <p className="action-item__description">{description2}{specialNumber && ` ${specialNumber}`}{specialLink && ` ${specialLink}`}.</p>
+      <p className="action-item__description">{`${description2} `}<span className="context-link">{specialNumber && specialNumber}</span></p>
     </div>
 
     <ActionItemCheckBox status={status} />
@@ -79,7 +78,7 @@ class ActionItemsList extends Component {
             title="Sign the petition"
             description="Sign the petition and we will send this to the Toronto City Council."
             description2="Follow the instructions found here"
-            specialLink="change.org/toronto-shelter"
+            specialNumber="change.org/toronto-shelter"
           />
           <ActionItem
             usersCompleted={112}
@@ -88,7 +87,7 @@ class ActionItemsList extends Component {
             title="Donate to the new shelter"
             description="Call your MP and tell them that you want them to vote yes on prop 27"
             description2="Donate to the cause at"
-            specialLink="gofundme.org/toronto-shelter"
+            specialNumber="gofundme.org/toronto-shelter"
           />
         </div>
       </div>
