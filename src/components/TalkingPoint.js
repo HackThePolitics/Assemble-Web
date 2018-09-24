@@ -37,9 +37,7 @@ class TalkingPoint extends Component {
             {this.props.user.talkingpoint}
           </div>
           <p className="talking-point-comment">
-            {this.props.talkingPoint &&
-              this.props.talkingPoint.comments &&
-              this.props.talkingPoint.comments[0]}
+              This is a great idea!
           </p>
           <div
             className="talking-point-comment"

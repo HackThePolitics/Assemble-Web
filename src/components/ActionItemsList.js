@@ -3,19 +3,26 @@ import { Avatar, ProgressBar, Heading } from '@shopify/polaris';
 import './ActionItemsList.css';
 import uncheckedImage from '../assets/checkbox-unchecked.png';
 import checkedImage from '../assets/checkbox-checked.png';
+import contactSvg from '../assets/action-items/contact.svg';
+import donateSvg from '../assets/action-items/donate.svg';
+import signSvg from '../assets/action-items/sign.svg';
 
 const defaultDescription =
-  'Call your MP and tell them that you want them to vote yes on prop 27 because.\n Your MP is Julie Dabrusin';
+  'Call your MP and tell them that you want them to vote yes on prop 27';
 
 const ActionItemCheckBox = ({ status = false }) =>
-  status ? <img src={checkedImage} /> : <img src={uncheckedImage} />;
+  status ? <img width="44px" height="44px" src={checkedImage} /> : <img width="44px" height="44px" src={uncheckedImage} />;
 
 const ActionItem = ({
+  type = contactSvg,
   title = 'Title',
   description = defaultDescription,
+  description2 = defaultDescription,
   status = false,
   usersCompleted = 300,
-  usersTotal = 400
+  usersTotal = 400,
+  specialNumber,
+  specialLink,
 }) => (
   <div className="action-item">
     {/* <Avatar
@@ -24,7 +31,7 @@ const ActionItem = ({
       source="https://picsum.photos/240/240"
       size="large"
     /> */}
-    <img src="https://picsum.photos/240/240" className="action-item__avatar" />
+    <img sstyle={{paddingLeft: '12px'}} src={type} className="action-item__avatar" />
 
     <div className="action-item__content">
       <div className="action-item__content__top">
@@ -41,6 +48,7 @@ const ActionItem = ({
         </div>
       </div>
       <p className="action-item__description">{description}</p>
+      <p className="action-item__description">{description2}{specialNumber && ` ${specialNumber}`}{specialLink && ` ${specialLink}`}.</p>
     </div>
 
     <ActionItemCheckBox status={status} />
@@ -54,9 +62,34 @@ class ActionItemsList extends Component {
         <Heading>ACTION ITEMS</Heading>
         <br/>
         <div className="action-items-list">
-          <ActionItem status={true} usersCompleted={176} usersTotal={253} />
-          <ActionItem usersCompleted={234} usersTotal={253} />
-          <ActionItem usersCompleted={112} usersTotal={253} />
+          <ActionItem
+            status={true}
+            usersCompleted={176}
+            usersTotal={253}
+            type={contactSvg}
+            title="Call your MP"
+            description="Call your MP and tell them that you want them to vote yes on prop 27"
+            description2="Your MP is Julie Dabrusin her number is"
+            specialNumber="1-800-462-7655"
+          />
+          <ActionItem
+            usersCompleted={234}
+            usersTotal={253}
+            type={donateSvg}
+            title="Sign the petition"
+            description="Sign the petition and we will send this to the Toronto City Council."
+            description2="Follow the instructions found here"
+            specialLink="change.org/toronto-shelter"
+          />
+          <ActionItem
+            usersCompleted={112}
+            usersTotal={253}
+            type={signSvg}
+            title="Donate to the new shelter"
+            description="Call your MP and tell them that you want them to vote yes on prop 27"
+            description2="Donate to the cause at"
+            specialLink="gofundme.org/toronto-shelter"
+          />
         </div>
       </div>
     );
