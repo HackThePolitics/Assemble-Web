@@ -34,7 +34,7 @@ const ActionItem = ({
     <Col xs="2">
       <img sstyle={{paddingLeft: '12px'}} src={type} className="action-item__avatar" />
     </Col>
-    <Col xs="9">
+    <Col xs="8">
       <div className="action-item__content__top">
         <Heading className="action-item__title">{title}</Heading>
         <div className="action-item__progress">
@@ -48,7 +48,7 @@ const ActionItem = ({
       <p className="action-item__description">{description}</p>
       <p className="action-item__description">{`${description2} `}<span className="context-link">{specialNumber && specialNumber}</span></p>
     </Col>
-    <Col xs="1">
+    <Col xs="2" style={{ paddingLeft: '80px', paddingTop: '10px'}}>
       <ActionItemCheckBox status={status} />
     </Col>
   </Row>
