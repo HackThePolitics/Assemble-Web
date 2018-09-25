@@ -35,12 +35,16 @@ const ActionItem = ({
       <img sstyle={{paddingLeft: '12px'}} src={type} className="action-item__avatar" />
     </Col>
     <Col xs="9">
-      <Heading className="action-item__title">{title}</Heading>
-      <ProgressBar
-        className="action-item__progress__bar"
-        progress={(usersCompleted / usersTotal) * 100}
-      />
-      <p>{`${usersCompleted} out of ${usersTotal} followers have done this.`}</p>
+      <div className="action-item__content__top">
+        <Heading className="action-item__title">{title}</Heading>
+        <div className="action-item__progress">
+          <ProgressBar
+            className="action-item__progress__bar"
+            progress={(usersCompleted / usersTotal) * 100}
+          />
+          <p className="action-item__progress__numbers">{`${usersCompleted} out of ${usersTotal} followers have done this.`}</p>
+        </div>
+      </div>
       <p className="action-item__description">{description}</p>
       <p className="action-item__description">{`${description2} `}<span className="context-link">{specialNumber && specialNumber}</span></p>
     </Col>
@@ -68,6 +72,8 @@ class ActionItemsList extends Component {
               description2="Your MP is Julie Dabrusin her number is"
               specialNumber="1-800-462-7655"
             />
+            <br/>
+            <br/>
             <ActionItem
               usersCompleted={234}
               usersTotal={253}
@@ -77,6 +83,8 @@ class ActionItemsList extends Component {
               description2="Follow the instructions found here"
               specialNumber="change.org/toronto-shelter"
             />
+            <br/>
+            <br/>
             <ActionItem
               usersCompleted={112}
               usersTotal={253}
