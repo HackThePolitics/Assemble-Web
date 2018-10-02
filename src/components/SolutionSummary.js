@@ -27,7 +27,7 @@ const SolutionSummary = ({
     <TextContainer>
       <Heading element="h1">
         {docDetails.title}
-        <LevelLabel level={level} />
+        <LevelLabel level={docDetails.level} />
       </Heading>
       <p
         style={{ cursor: 'pointer' }}

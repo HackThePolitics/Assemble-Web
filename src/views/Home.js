@@ -14,7 +14,7 @@ import IssuesList from '../components/IssuesList';
 
 import SolutionsView from '../components/SolutionsView';
 import { LEVELS } from '../constants';
-import logo from '../assets/one-riding.png';
+import Riverdale from '../components/Riverdale';
 
 class Home extends Component {
   componentWillMount() {
@@ -45,7 +45,7 @@ class Home extends Component {
             >
               <Layout>
                 <Layout.Section secondary>
-                  <img src={logo} alt="logo" />
+                  <Riverdale />
                 </Layout.Section>
                 <Layout.Section>
                   <div
@@ -70,8 +70,8 @@ class Home extends Component {
                     <div>
                       <Heading>PROVINCIAL</Heading>
                       <div style={{ fontSize: '12px' }}>
-                        Your MPP is Peter Tabuns NDP{' '}
-                        <span style={{ color: '#e39703' }}>LIBERAL</span>
+                        Your MPP is Peter Tabuns{' '}
+                        <span style={{ color: '#e39703' }}>NDP</span>
                       </div>
                     </div>
                     <ButtonGroup>

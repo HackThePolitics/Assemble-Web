@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { Button, Heading, Layout, Card } from '@shopify/polaris';
 import TagList from '../components/TagList';
-import oneRiding from '../assets/one-riding.png';
+import Riverdale from '../components/Riverdale';
 
 import IssuesList from '../components/IssuesList';
 import { LEVELS } from '../constants';
@@ -111,7 +111,7 @@ class ProblemDetailPage extends Component {
                 <br />
               </Layout.Section>
               <Layout.Section secondary>
-                <img src={oneRiding} />
+                <Riverdale />
                 <br />
                 <br />
                 <div>Location: Riverdale</div>
