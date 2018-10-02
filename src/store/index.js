@@ -1,7 +1,6 @@
 import { applyMiddleware, createStore, compose } from "redux"; //  Main Redux library
 import logger from "redux-logger";
 import thunkMiddleware from "redux-thunk";
-import { composeWithDevTools } from "redux-devtools-extension";
 
 import { reactReduxFirebase } from "react-redux-firebase";
 import { reduxFirestore } from "redux-firestore";
@@ -24,7 +23,7 @@ const createStoreWithFirebase = compose(
 
 const store = createStoreWithFirebase(
   reducers,
-  composeWithDevTools(applyMiddleware(thunkMiddleware, logger))
+  applyMiddleware(thunkMiddleware, logger),
 );
 
 export default store;
