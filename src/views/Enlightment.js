@@ -7,7 +7,7 @@ import {
   Button,
   ButtonGroup
 } from '@shopify/polaris';
-import logo from '../assets/one-riding.png';
+import Riverdale from '../components/Riverdale';
 
 class Enlightment extends Component {
   constructor() {
@@ -30,11 +30,11 @@ class Enlightment extends Component {
           sectioned
           subdue
         >
-          <div style={{display: 'flex'}}>
-            <div style={{margin: "2px 0 0 0"}}>
-              <img src={logo} alt="logo" />
-            </div>
-            <div style={{margin: "0 0 0 30px"}}>
+          <Layout>
+            <Layout.Section secondary>
+              <Riverdale />
+            </Layout.Section>
+            <Layout.Section>
               <h2>Our government is split into three levels with its own elected representatives. </h2>
               <br/>
               <p>
@@ -51,8 +51,8 @@ class Enlightment extends Component {
               </p>
               <br/>
               <div style={{ fontSize: '12px' }}>
-                        Your MPP is Peter Tabuns NDP{' '}
-                        <span style={{ color: '#e39703' }}>LIBERAL</span>
+                        Your MPP is Peter Tabuns{' '}
+                        <span style={{ color: '#e39703' }}>NDP</span>
               </div>
               <br/>
               <p>
@@ -70,13 +70,13 @@ class Enlightment extends Component {
               <p>
               They also spend time talking with their constituents to discuss their concerns.
               </p>
-            </div>
-           </div>
+            </Layout.Section>
+          </Layout>
         </Card>
         <br />
         <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
           <Button primary size="large" onClick={() => this.onSubmit()}>
-            Submit
+            Continue
           </Button>
         </div>
       </div>
