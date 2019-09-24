@@ -39,39 +39,37 @@ class PostalCode extends Component {
 
   render() {
     return (
-      <div className="postal-page-container">
-        <div
-          className="postal-page-bg"
-          style={{
-            backgroundImage: `url("${TObackgroundImage}")`
-          }}
-        />
-        <div className="language-selector">
-          EN | <span className="highlighted">FR</span>
-        </div>
-        <div className="Polaris-Labelled__LabelWrapper">
-          <div className="Polaris-Label">
-            <label
-              id="TextField1Label"
-              for="TextField1"
-              className="Polaris-Label__Text postal-page-header"
-            >
-              Where are you located?
-            </label>
+      <div className="background-container" style={{
+        backgroundImage: `url("${TObackgroundImage}")`
+       }} >
+        <div className="postal-page-container">
+          <div className="language-selector">
+            EN | <span className="highlighted">FR</span>
           </div>
-        </div>
-        <TextField
-          label=""
-          value={this.state.postal}
-          onChange={value => this.onChange(value)}
-          error={this.state.error}
-          placeholder="Please enter your postal code here."
-        />
-        <br />
-        <div className="postal-page-submit">
-          <Button primary size="large" onClick={() => this.onPostalSubmit()}>
-            Submit
-          </Button>
+          <div className="Polaris-Labelled__LabelWrapper">
+            <div className="Polaris-Label">
+              <label
+                id="TextField1Label"
+                for="TextField1"
+                className="Polaris-Label__Text postal-page-header"
+              >
+                Where are you located?
+              </label>
+            </div>
+          </div>
+          <TextField
+            label=""
+            value={this.state.postal}
+            onChange={value => this.onChange(value)}
+            error={this.state.error}
+            placeholder="Please enter your postal code here."
+          />
+          <br />
+          <div className="postal-page-submit">
+            <Button primary size="large" onClick={() => this.onPostalSubmit()}>
+              Submit
+            </Button>
+          </div>
         </div>
       </div>
     );
