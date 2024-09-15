@@ -7,8 +7,8 @@ class Test extends Component {
     return (
       <div>
         {/* <h1>This is a test page for components</h1> */}
-        <ProblemDetailPage/>
-        {/* <SolutionDetails /> */}
+        {/* <ProblemDetailPage/> */}
+        <SolutionDetails />
 
       </div>
     );
